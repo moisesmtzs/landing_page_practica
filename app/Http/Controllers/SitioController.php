@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contacto;
 
 class SitioController extends Controller
 {
@@ -32,4 +33,24 @@ class SitioController extends Controller
         ]);
         dd($request->all());
     }
+
+    public function insertar() {
+
+        //$contacto = new Contacto();
+        //$contacto->nombre = $request->nombre;
+        //$contacto->correo = $request->correo;
+        //$contacto->save();
+
+        Contacto::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]);
+
+        
+        Contacto::create($request->all());
+
+        return redirect('/contact');
+    }
+
 }

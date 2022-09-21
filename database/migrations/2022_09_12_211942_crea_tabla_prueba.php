@@ -13,8 +13,11 @@ class CreaTablaPrueba extends Migration
      */
     public function up()
     {
-        Schema::create('tabla_prueba', function (Blueprint $table) {
+        Schema::create('contactos', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreaTablaPrueba extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tabla_prueba');
+        Schema::dropIfExists('contactos');
     }
 }
