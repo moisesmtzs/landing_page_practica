@@ -31,26 +31,27 @@ class SitioController extends Controller
             'email' => 'required',
             'message' => 'required',
         ]);
-        dd($request->all());
-    }
-
-    public function insertar() {
-
-        //$contacto = new Contacto();
-        //$contacto->nombre = $request->nombre;
-        //$contacto->correo = $request->correo;
-        //$contacto->save();
 
         Contacto::create([
             'name' => $request->name,
             'email' => $request->email,
             'message' => $request->message,
         ]);
-
+    
         
-        Contacto::create($request->all());
-
+        // Contacto::create($request->all());
+    
         return redirect('/contact');
+        // dd($request->all());
     }
+
+    // public function insertar(Request $request) {
+
+    //     //$contacto = new Contacto();
+    //     //$contacto->nombre = $request->nombre;
+    //     //$contacto->correo = $request->correo;
+    //     //$contacto->save();
+
+    // }
 
 }

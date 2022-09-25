@@ -68,7 +68,8 @@
       <div class="row contenedor">
 
         <div class="col-lg-6">
-          <form action="/recibir-datos" method="POST" role="form" class="php-email-form">
+          <form action="/contact" method="POST" class="php-email-form">
+            @csrf
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Tu Nombre" value="{{ $name }}">

@@ -18,4 +18,4 @@ Route::get('/', [SitioController::class, 'goToLandingPage']);
 
 Route::get('/contact/{id?}', [SitioController::class, 'validarParametro']);
 
-Route::post('/recibir-datos', [SitioController::class, 'formReceive']);
+Route::post('/contact', [SitioController::class, 'formReceive']);
