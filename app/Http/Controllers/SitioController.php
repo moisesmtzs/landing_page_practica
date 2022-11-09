@@ -27,9 +27,9 @@ class SitioController extends Controller
 
     public function formReceive( Request $request ) {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'message' => 'required',
+            'name' => 'required|min:10',
+            'email' => 'required|email',
+            'message' => 'required|min:10',
         ]);
 
         Contacto::create([

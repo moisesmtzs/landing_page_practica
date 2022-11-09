@@ -68,15 +68,22 @@
       <div class="row contenedor">
 
         <div class="col-lg-6">
+          @if( $errors->any() )
+            <ul>
+              @foreach($errors->all() as $error)
+                  <li class="text-center text-sm-center fs-5 fw-semibold">{{ $error }}</li>
+              @endforeach
+            </ul>
+          @endif
           <form action="/contact" method="POST" class="php-email-form">
             @csrf
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Tu Nombre" value="{{ $name }}">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Tu Nombre" value="{{ $name }}" required>
               </div>
               <br>
               <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Tu Email" value="{{ $email }}">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Tu Email" value="{{ $email }}" required>
               </div>
               <br>
             </div>
